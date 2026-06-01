@@ -36,7 +36,7 @@ services:
     image: selenium/standalone-chrome
     container_name: empresta_selenium
     ports:
-      - "7902:7900" # VNC (pra ver o browser rodando)
+      - "7900:7900" # VNC (pra ver o browser rodando)
     networks:
       - empresta-network
     shm_size: 2gb
