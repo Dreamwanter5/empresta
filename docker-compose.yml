@@ -1,8 +1,6 @@
 services:
   empresta:
-    build:
-      context: .
-      dockerfile: dockerfile
+    build: .
     image: empresta:latest
     container_name: empresta
     ports:
@@ -11,12 +9,12 @@ services:
       - mariadb
     networks:
       - empresta-network
-    volumes:
-      - ./:/var/www/html
-      - vendor:/var/www/html/vendor
     environment:
       HOME: /tmp
     user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./:/var/www/html
+      - vendor:/var/www/html/vendor
 
   mariadb:
     image: mariadb:11
