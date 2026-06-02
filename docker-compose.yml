@@ -14,8 +14,6 @@ services:
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./:/var/www/html
-      - vendor:/var/www/html/vendor
-
   mariadb:
     image: mariadb:11
     container_name: empresta_mariadb
@@ -44,5 +42,4 @@ networks:
 
 volumes:
   mariadb_data:
-  vendor:
 
